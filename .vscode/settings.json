@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a5d53a4a-0644-433e-80c2-62bbdf957038/AppServices/subscriptions/a5d53a4a-0644-433e-80c2-62bbdf957038/resourceGroups/SoT-Pod-6-RG/providers/Microsoft.Web/sites/myYoga-Static-POD6",
+    "appService.deploySubpath": "."
+}
