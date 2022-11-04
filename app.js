@@ -55,7 +55,9 @@ app.post('/signin', (req, res) => {
       console.log(data);
       if (data.recordset.length > 0) {
         console.log("Login Success")
-        res.cookie("username", data.recordset[0].LoginName);
+        res.cookie("user_id", data.recordset[0].UserID, {maxAge:600000});
+        res.cookie("username", data.recordset[0].LoginName, {maxAge:600000});
+        res.cookie("isAdmin", data.recordset[0].IsAdmin, {maxAge:600000});
         res.json({ data: data.recordset });
       }
       else {
