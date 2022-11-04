@@ -44,6 +44,7 @@ var config =
 app.post('/signin', (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
+  console.log(req.body.username);
   var query = "SELECT UserID, LoginName, IsAdmin FROM [dbo].[User] WHERE LoginName = '" + username + "' AND PasswordHash ='" + password + "';";
   sql.connect(config, function (err) {
     var request = new sql.Request();
@@ -54,7 +55,7 @@ app.post('/signin', (req, res) => {
       console.log(data);
       if (data.recordset.length > 0) {
         console.log("Login Success")
-        res.cookie("userID", data.recordset[0].UserID);
+        res.cookie("username", data.recordset[0].LoginName);
         res.json({ data: data.recordset });
       }
       else {
