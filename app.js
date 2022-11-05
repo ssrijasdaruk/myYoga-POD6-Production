@@ -45,7 +45,7 @@ app.post('/signin', (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
   console.log(req.body.username);
-  var query = "SELECT UserID, LoginName, IsAdmin FROM [dbo].[User] WHERE LoginName = '" + username + "' AND PasswordHash ='" + password + "';";
+  var query = "SELECT UserID, LoginName, IsAdmin, Vouchers FROM [dbo].[User] WHERE LoginName = '" + username + "' AND PasswordHash ='" + password + "';";
   sql.connect(config, function (err) {
     var request = new sql.Request();
     request.query(query, function (err, data) {
@@ -58,6 +58,7 @@ app.post('/signin', (req, res) => {
         res.cookie("user_id", data.recordset[0].UserID, { maxAge: 600000 });
         res.cookie("username", data.recordset[0].LoginName, { maxAge: 600000 });
         res.cookie("isAdmin", data.recordset[0].IsAdmin, { maxAge: 600000 });
+        res.cookie("vouchers", data.recordset[0].Vouchers, { maxAge: 600000 });
         res.json({ data: data.recordset });
       }
       else {

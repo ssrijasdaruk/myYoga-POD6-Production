@@ -5,9 +5,9 @@ function getCookieList() {
         let spli = document.cookie.split('; ');
         let cookie_list = {};
         for(var j = 0; j < spli.length; j++) {
-        let temp = spli[j];
-        let spli2 = temp.split('=');
-        cookie_list[spli2[0]] = spli2[1];
+            let temp = spli[j];
+            let spli2 = temp.split('=');
+            cookie_list[spli2[0]] = spli2[1];
         }
         return cookie_list;
     }
@@ -39,15 +39,17 @@ function setupElement() {
     let cookie_list = getCookieList();
     var login = document.getElementById("login").classList;
     var logout = document.getElementById("logout").classList;
+    var classtable = document.getElementById("classtable").classList;
     var admin = document.getElementById("admin").classList;
     console.log(cookie_list);
     if(isCookieEmpty()){
         logout.add("hidden");
-
+        classtable.add("hidden");
     }else{
         login.add("hidden");
 
     }
+
 
     if( isCookieEmpty() || cookie_list.isAdmin == 'false'){
         admin.add("hidden");

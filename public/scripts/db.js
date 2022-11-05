@@ -50,31 +50,16 @@ function admin_insert_class() {
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    alert("Insert Success");
+                    alert("Add class Success");
+                    window.location = '/admin.html';
                 }
                 else if (xmlhttp.readyState == 4 && xmlhttp.status == 400) {
-                    alert("Insert Error");
+                    alert("Add class Fail");
                 }
             }
         };
     }
 }
 
-function retriev_class() { // Run this function when onload
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "retrieve_class", true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            //Retrieve data from database
-            //xmlhttp.response = data
-            //document.getElementById("class_table").innerHTML = xmlhttp.responseText;
-            console.log(xmlhttp.responseText);
-        }
-        else if (xmlhttp.readyState == 4 && xmlhttp.status == 400) {
-            console.log("Error");
-        }
-    }
-};
 
 
