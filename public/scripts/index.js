@@ -49,7 +49,7 @@ function setupElement() {
 
     }
 
-    if( isCookieEmpty() || !cookie_list.isAdmin == false){
+    if( isCookieEmpty() || cookie_list.isAdmin == 'false'){
         admin.add("hidden");
     }
 }

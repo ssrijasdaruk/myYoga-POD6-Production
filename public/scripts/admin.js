@@ -24,7 +24,7 @@ function isCookieEmpty() {
 
 function checkIdentity() {
     let cookie_list = getCookieList();
-    if( isCookieEmpty() || !cookie_list.isAdmin == false){
+    if( isCookieEmpty() || cookie_list.isAdmin == 'false'){
         alert("You are not authorized to access this page");
         window.location = '/';
     }
