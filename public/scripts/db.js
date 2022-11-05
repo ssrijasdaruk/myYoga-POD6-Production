@@ -20,3 +20,61 @@ function c_login() {
         }
     };
 }
+
+
+
+function admin_insert_class() {
+    let spli = document.cookie.split('; ');
+    let cookie_list = {};
+    for (var j = 0; j < spli.length; j++) {
+        let temp = spli[j];
+        let spli2 = temp.split('=');
+        cookie_list[spli2[0]] = spli2[1];
+    }
+    if (cookie_list.isAdmin == 'false') {
+        alert("You are not authorized to insert");
+    }
+    else {
+        var ClassName = document.getElementById("Insert_ClassName").value;
+        var MaxVacancies = document.getElementById("Insert_MaxVacancies").value;
+        var StartDate = document.getElementById("Insert_StartDate").value;
+        var EndDate = document.getElementById("Insert_EndDate").value;
+        var Coach = document.getElementById("Insert_Coach").value;
+        if (ClassName == "" || MaxVacancies == "" || StartDate == "" || EndDate == "" || Coach == "") {
+            alert("Please enter all fields");
+        }
+        else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", `insert_class?ClassName=${ClassName}&MaxVacancies=${MaxVacancies}&StartDate=${StartDate}&EndDate=${EndDate}&Coach=${Coach}`, true);
+            xmlhttp.setRequestHeader("Content-type", "application/json");
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    alert("Insert Success");
+                }
+                else if (xmlhttp.readyState == 4 && xmlhttp.status == 400) {
+                    alert("Insert Error");
+                }
+            }
+        };
+    }
+}
+
+function retriev_class() { // Run this function when onload
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "retrieve_class", true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //Retrieve data from database
+            //xmlhttp.response = data
+            //document.getElementById("class_table").innerHTML = xmlhttp.responseText;
+            console.log(xmlhttp.responseText);
+        }
+        else if (xmlhttp.readyState == 4 && xmlhttp.status == 400) {
+            console.log("Error");
+        }
+    }
+};
+
+

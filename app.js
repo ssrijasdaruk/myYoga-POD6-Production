@@ -55,9 +55,9 @@ app.post('/signin', (req, res) => {
       console.log(data);
       if (data.recordset.length > 0) {
         console.log("Login Success")
-        res.cookie("user_id", data.recordset[0].UserID, {maxAge:600000});
-        res.cookie("username", data.recordset[0].LoginName, {maxAge:600000});
-        res.cookie("isAdmin", data.recordset[0].IsAdmin, {maxAge:600000});
+        res.cookie("user_id", data.recordset[0].UserID, { maxAge: 600000 });
+        res.cookie("username", data.recordset[0].LoginName, { maxAge: 600000 });
+        res.cookie("isAdmin", data.recordset[0].IsAdmin, { maxAge: 600000 });
         res.json({ data: data.recordset });
       }
       else {
@@ -68,25 +68,59 @@ app.post('/signin', (req, res) => {
   });
 });
 
-app.get("/retrieve", (req, res) => {
+app.get("/retrieve_class", (req, res) => {
   sql.connect(config, function (err) {
-    console.log("test");
+    query = " SELECT [ClassID], [ClassName], [MaxVacancies], [CurrVacancies], [StartDate], [EndDate], [Coach] FROM[dbo].[ClassTable]";
+    console.log("Retrieving data");
     if (err) {
       console.log(err);
     }
 
     var request = new sql.Request();
-    request.query('SELECT TOP (1000) [ID] ,[Message] FROM [dbo].[Testing_Table]', function (err, data) {
+    request.query(query, function (err, data) {
 
       if (err) {
         console.log(err)
       }
-      res.send(200, data.recordset.length);
+      res.send(200, data.recordset);
       sql.close();
     });
   });
 });
 
+app.get("/insert_class", (req, res) => {
+  var table = "[dbo].[ClassTable]";
+  var ClassName = req.query.ClassName
+  var MaxVacancies = req.query.MaxVacancies;
+  var CurrVacancies = MaxVacancies;
+  var StartDate = req.query.StartDate;
+  var EndDate = req.query.EndDate;
+  var Coach = req.query.Coach;
+  var query = "INSERT INTO " + table + " (ClassName, MaxVacancies, CurrVacancies, StartDate, EndDate, Coach) VALUES ('" + ClassName + "', '" + MaxVacancies + "', '" + CurrVacancies + "', '" + StartDate + "', '" + EndDate + "', '" + Coach + "');";
+  console.log(query);
+
+  sql.connect(config, function (err) {
+    console.log("test");
+    if (err) {
+      console.log(err);
+    }
+    else {
+      var request = new sql.Request();
+      request.query(query, function (err, data) {
+
+        if (err) {
+          console.log(err)
+          res.send(500);
+          sql.close();
+        }
+        else {
+          res.send(200);
+          sql.close();
+        }
+      });
+    }
+  });
+});
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

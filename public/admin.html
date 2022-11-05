@@ -149,7 +149,7 @@
       }
     </style>
   </head>
-  <body onload="checkIdentity()">
+  <body onload="checkIdentity();retriev_class();">
     <header id="top">
       <nav
         class="navbar navbar-inverse navbar-fixed-top cbp-af-header"
@@ -197,7 +197,57 @@
             style="background-image: url(/images/login.png)"
             ;
           >
-
+            <!--fill form with ClassName, MaxVacancies, StartDate, EndDate, and Coach-->
+            <div class="content">
+              <div class="text">Add Class</div>
+              <div class="field">
+                <span><i class="fas fa-user"></i></span>
+                <input
+                  id="Insert_ClassName"
+                  type="text"
+                  placeholder="Class Name"
+                  id="ClassName"
+                  required
+                />
+              </div>
+              <div class="field">
+                <span><i class="fas fa-user"></i></span>
+                <input
+                  type="text"
+                  placeholder="Max Vacancies"
+                  id="Insert_MaxVacancies"
+                  required
+                />
+              </div>
+              <div class="field">
+                <span><i class="fas fa-user"></i></span>
+                <input
+                  type="datetime-local"
+                  placeholder="Start Date"
+                  id="Insert_StartDate"
+                  required
+                />
+              </div>
+              <div class="field">
+                <span><i class="fas fa-user"></i></span>
+                <input
+                  type="datetime-local"
+                  placeholder="End Date"
+                  id="Insert_EndDate"
+                  required
+                />
+              </div>
+              <div class="field">
+                <span><i class="fas fa-user"></i></span>
+                <input
+                  type="text"
+                  placeholder="Coach"
+                  id="Insert_Coach"
+                  required
+                />
+              </div>
+              <button onclick="admin_insert_class();">Add Class</button>
+            </div>
           </div>
         </div>
       </div>
