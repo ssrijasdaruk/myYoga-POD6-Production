@@ -50,8 +50,11 @@ function retriev_class () { // Run this function when onload
 };
 
 async function renderTable(){
-    const res = await retriev_class();
     const cookie_list = getCookieList();
+    var vouchers = document.getElementById('vouchers');
+    vouchers.innerHTML = '<h2> Voucher(s): ' + cookie_list.vouchers +  '</h2>';
+    const res = await retriev_class();
+    
     if(res != "Error"){
         var data = JSON.parse(res);
         var table = document.getElementById('table');
