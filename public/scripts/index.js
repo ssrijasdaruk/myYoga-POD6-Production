@@ -40,7 +40,7 @@ async function setupElement() {
     var login = document.getElementById("login").classList;
     var logout = document.getElementById("logout").classList;
     var admin = document.getElementById("admin").classList;
-    console.log(cookie_list);
+
     if(isCookieEmpty()){
         logout.add("hidden");
         renderNormalTable();
@@ -136,7 +136,7 @@ function retriev_class () { // Run this function when onload
                     //Retrieve data from database
                     //xmlhttp.response = data
                     //document.getElementById("class_tabl
-                    console.log("1, ", xmlhttp.responseText)
+
                     resolve(xmlhttp.responseText);
                 }
                 else if (xmlhttp.readyState == 4 && xmlhttp.status == 400) {
