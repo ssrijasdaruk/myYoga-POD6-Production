@@ -23,9 +23,16 @@
       .hidden{
         display: hidden !important;
       }
+
+      #table{
+        color: white;
+        text-align: left;
+      }
+
+      
     </style>
   </head>
-  <body onload="setupElement()">
+  <body onload="setupElement(); renderTable();">
     <header id="top">
       <nav
         class="navbar navbar-inverse navbar-fixed-top cbp-af-header"
@@ -59,10 +66,10 @@
               <li><a href="index.html#top">Home</a></li>
               <li><a href="index.html#poses">Poses</a></li>
               <li><a href="index.html#activities">Instructors</a></li>
-              <li><a href="index.html#contact-us">Contact Us</a></li>
-              <li id="classtable">
-                <a href="class.html">Classe Table</a>
+              <li>
+                <a href="index.html#classestimetable">Classe Table</a>
               </li>
+              <li><a href="index.html#contact-us">Contact Us</a></li>
               <li id="admin"><a href="admin.html">Admin</a></li>
               <li id="login"><a href="login.html">Login</a></li>
               <li id="logout" onclick="deleteAllCookies()"><a href="index.html">Logout</a></li>
@@ -135,13 +142,13 @@
           class="fill-screen"
           style="background-image: url(images/beachyoga.jpg)"
         >
-          <div class="home-container01">
+          <div class="home-container01" style="position: unset;">
             <div class="home-container02">
-              <h1 class="home-text01">ON THE COASTLINE</h1>
+              <h1 class="home-text01" style="color: black;font-weight: bold">ON THE COASTLINE</h1>
               <span class="home-text01">
                 <span></span>
                 <span>
-                  <p>
+                  <p style="color: black;font-weight: bold;font-size: 1em;">
                     We're waiting for the weather to warm up so that we can go
                     to the coastline. We really miss the summertime, our outdoor
                     yoga seesions on the coastline.
@@ -151,6 +158,25 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="classestimetable" class="row">
+
+            <div
+            class="fill-screen"
+              style="background-image: url(/images/login.png); padding-left: 20px; padding-right: 20px;"
+            >
+            <br>
+            <h1 style="text-align: center; color: white;">Class TimeTable</h1>
+            <br>
+            <div id="vouchers" style="color: white;"></div>
+            <table id="table" class="table">
+  
+            </table>
+  
+            </div>
+
+
       </section>
 
       <section id="contact-us" class="row contact-us">
