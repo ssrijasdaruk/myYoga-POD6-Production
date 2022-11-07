@@ -120,32 +120,32 @@ app.get("/update_vacancies", (req, res) => {
 });
 
 app.get("/update_vouchers", (req, res) => {
-    var userid = req.query.userid;
-    var vouchers = req.query.vouchers;
-    query = " UPDATE [dbo].[User] SET vouchers = " + vouchers + " WHERE UserID = " + userid;
+  var userid = req.query.userid;
+  var vouchers = req.query.vouchers;
+  query = " UPDATE [dbo].[User] SET vouchers = " + vouchers + " WHERE UserID = " + userid;
 
-    sql.connect(config, function (err) {
-      console.log("Updating user vouchers");
+  sql.connect(config, function (err) {
+    console.log("Updating user vouchers");
 
-      if (err) {
-        console.log(err);
-      }
-      else {
-        var request = new sql.Request();
-        request.query(query, function (err, data) {
-  
-          if (err) {
-            console.log(err)
-            res.send(500);
-            sql.close();
-          }
-          else {
-            res.send(200);
-            sql.close();
-          }
-        });
-      }
-    });
+    if (err) {
+      console.log(err);
+    }
+    else {
+      var request = new sql.Request();
+      request.query(query, function (err, data) {
+
+        if (err) {
+          console.log(err)
+          res.send(500);
+          sql.close();
+        }
+        else {
+          res.send(200);
+          sql.close();
+        }
+      });
+    }
+  });
 });
 
 app.get("/insert_class", (req, res) => {
@@ -156,7 +156,7 @@ app.get("/insert_class", (req, res) => {
   var StartDate = req.query.StartDate;
   var EndDate = req.query.EndDate;
   var Coach = req.query.Coach;
-  var query = "INSERT INTO " + table + " (ClassName, MaxVacancies, CurrVacancies, StartDate, EndDate, Coach) VALUES ('" + ClassName + "', '" + MaxVacancies + "', '" + CurrVacancies + "', '" + StartDate + "', '" + EndDate + "', '" + Coach + "');";
+  var query = "INSERT INTO " + table + " (ClassName, MaxVacancies, CurrVacancies, StartDate, EndDate, Coach) VALUES ('" + ClassName + "', '" + MaxVacancies + "', '" + 0 + "', '" + StartDate + "', '" + EndDate + "', '" + Coach + "');";
   console.log(query);
 
   sql.connect(config, function (err) {
@@ -184,7 +184,7 @@ app.get("/insert_class", (req, res) => {
 
 app.get('/reset_cookies', (req, res) => {
   var userid = req.query.userid;
-  var query = "SELECT UserID, LoginName, IsAdmin, Vouchers FROM [dbo].[User] WHERE UserID = " + userid ;
+  var query = "SELECT UserID, LoginName, IsAdmin, Vouchers FROM [dbo].[User] WHERE UserID = " + userid;
   console.log(query);
   sql.connect(config, function (err) {
     var request = new sql.Request();
