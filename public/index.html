@@ -2,22 +2,15 @@
 <html>
   <head>
     <title></title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <link
-      href="http://fonts.googleapis.com/css?family=Open+Sans"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-
-    <script src="scripts/index.js"></script>
+    
+    <!-- Move index.js script tab to the bottom as this makes the page load slowly -->
 
     <style>
       .hidden{
@@ -28,25 +21,16 @@
         color: white;
         text-align: left;
       }
-
-      
     </style>
+
   </head>
   <body onload="setupElement(); renderTable();">
     <header id="top">
-      <nav
-        class="navbar navbar-inverse navbar-fixed-top cbp-af-header"
-        role="navigation"
-      >
+      <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1"
-            >
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -58,27 +42,21 @@
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div
-            class="collapse navbar-collapse"
-            id="bs-example-navbar-collapse-1"
-          >
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="index.html#top">Home</a></li>
-              <li><a href="index.html#poses">Poses</a></li>
-              <li><a href="index.html#activities">Instructors</a></li>
-              <li>
-                <a href="index.html#classestimetable">Classe Table</a>
-              </li>
+              <li><a href="index.html#classestimetable">Classe Table</a></li>
+              <li><a href="index.html#activities">Instructors</a></li>              
+              <li><a href="index.html#poses">Poses</a></li>              
               <li><a href="index.html#contact-us">Contact Us</a></li>
               <li id="admin"><a href="admin.html">Admin</a></li>
               <li id="login"><a href="login.html">Login</a></li>
               <li id="logout" onclick="deleteAllCookies()"><a href="index.html">Logout</a></li>
             </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
+
     </header>
 
     <div class="container-fluid">
@@ -86,6 +64,7 @@
         <div
           class="fill-screen"
           style="background-image: url(images/header_bg.jpg)"
+          data-stellar-background-ratio="0.2"
         >
           <!--<img class="img-responsive title-image" src="/images/site-logo-white.png" alt="Rocky Mountain Outdoors Logo" />-->
           <div class="home-container01">
@@ -98,6 +77,9 @@
                   introduction of myYoga could go here!!! Related and inspiring
                   backgroud could also be set.
                 </span>
+                <span>
+                  <!-- This portion is for Username, password, and login butn -->
+                </span>
               </span>
             </div>
           </div>
@@ -106,6 +88,39 @@
             <a class="btn" href="#poses">
               <i class="fa fa-arrow-circle-down fa-4x"></i>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="classestimetable" class="row">
+        <div class="fill-screen" style="background-image: url(/images/login.png); padding-left: 20px; padding-right: 20px;">
+          <br>
+          <h1 style="text-align: center; color: white;">Class TimeTable</h1>
+          <br>
+          <div id="vouchers" style="color: white;"></div>
+          <table id="table" class="table">
+
+          </table>  
+        </div>
+      </section>      
+
+      <section id="activities" class="row">
+        <div class="fill-screen" style="background-image: url(images/beachyoga.jpg)">
+          <div class="home-container01" style="position: unset;">
+            <div class="home-container02">
+              <h1 class="home-text01" style="color: black;font-weight: bold">ON THE COASTLINE</h1>
+              <span class="home-text01">
+                <span></span>
+                <span>
+                  <!-- <p style="color: black;font-weight: bold;font-size: 1em;"> -->
+                  <p>
+                    We're waiting for the weather to warm up so that we can go
+                    to the coastline. We really miss the summertime, our outdoor
+                    yoga seesions on the coastline.
+                  </p>
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -135,48 +150,6 @@
             eiusmod tempor.
           </p>
         </div>
-      </section>
-
-      <section id="activities" class="row">
-        <div
-          class="fill-screen"
-          style="background-image: url(images/beachyoga.jpg)"
-        >
-          <div class="home-container01" style="position: unset;">
-            <div class="home-container02">
-              <h1 class="home-text01" style="color: black;font-weight: bold">ON THE COASTLINE</h1>
-              <span class="home-text01">
-                <span></span>
-                <span>
-                  <p style="color: black;font-weight: bold;font-size: 1em;">
-                    We're waiting for the weather to warm up so that we can go
-                    to the coastline. We really miss the summertime, our outdoor
-                    yoga seesions on the coastline.
-                  </p>
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="classestimetable" class="row">
-
-            <div
-            class="fill-screen"
-              style="background-image: url(/images/login.png); padding-left: 20px; padding-right: 20px;"
-            >
-            <br>
-            <h1 style="text-align: center; color: white;">Class TimeTable</h1>
-            <br>
-            <div id="vouchers" style="color: white;"></div>
-            <table id="table" class="table">
-  
-            </table>
-  
-            </div>
-
-
       </section>
 
       <section id="contact-us" class="row contact-us">
@@ -236,18 +209,9 @@
     <script src="scripts/classie.js"></script>
     <script src="scripts/cbpAnimatedHeader.js"></script>
     <script src="scripts/jquery.easing.1.3.js"></script>
-    <!--<script src="scripts/scrolling.js"></script>-->
-    <script>
-      $(function () {
-        $(window).on("load resize", function () {
-          $(".fill-screen").css("height", window.innerHeight);
-        });
+    <script src="scripts/jquery.stellar.js"></script>
+    <script src="scripts/scrolling.js"></script>
+    <script src="scripts/index.js"></script>
 
-        // add Bootstrap's scrollspy
-        $("body").scrollspy({
-          target: ".navbar",
-        });
-      });
-    </script>
   </body>
 </html>
