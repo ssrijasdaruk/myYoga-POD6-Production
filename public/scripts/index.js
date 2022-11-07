@@ -51,7 +51,7 @@ async function setupElement() {
     }
 
     if (isCookieEmpty() || cookie_list.isAdmin == 'false') {
-        admin.add("hidden");
+        //admin.add("hidden");
     }
 }
 
