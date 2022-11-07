@@ -39,7 +39,7 @@ async function setupElement() {
     let cookie_list = getCookieList();
     var login = document.getElementById("login").classList;
     var logout = document.getElementById("logout").classList;
-    var admin = document.getElementById("admin").classList;
+    var admin = document.getElementById("Add_class").classList;
 
     if (isCookieEmpty()) {
         logout.add("hidden");
@@ -51,7 +51,7 @@ async function setupElement() {
     }
 
     if (isCookieEmpty() || cookie_list.isAdmin == 'false') {
-        //admin.add("hidden");
+        admin.add("hidden");
     }
 }
 
