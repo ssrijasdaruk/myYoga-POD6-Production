@@ -24,6 +24,7 @@ function c_login() {
 
 
 function admin_insert_class() {
+    event.preventDefault();
     let spli = document.cookie.split('; ');
     let cookie_list = {};
     for (var j = 0; j < spli.length; j++) {
@@ -51,7 +52,7 @@ function admin_insert_class() {
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     alert("Add class Success");
-                    window.location = '/admin.html';
+                    window.location = '/index.html';
                 }
                 else if (xmlhttp.readyState == 4 && xmlhttp.status == 400) {
                     alert("Add class Fail");

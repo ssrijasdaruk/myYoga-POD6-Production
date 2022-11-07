@@ -16,20 +16,19 @@
     <link href="css/app.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-
+    <script src="scripts/db.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/admin.js"></script>
 
     <style>
-      .hidden{
+      .hidden {
         display: hidden !important;
       }
 
-      #table{
+      #table {
         color: white;
         text-align: left;
       }
-
-      
     </style>
   </head>
   <body onload="setupElement(); renderTable();">
@@ -70,9 +69,10 @@
                 <a href="#classestimetable">Classe Table</a>
               </li>
               <li><a href="#contact-us">Contact Us</a></li>
-              <li id="admin"><a href="admin.html">Admin</a></li>
               <li id="login"><a href="login.html">Login</a></li>
-              <li id="logout" onclick="deleteAllCookies()"><a href="index.html">Logout</a></li>
+              <li id="logout" onclick="deleteAllCookies()">
+                <a href="index.html">Logout</a>
+              </li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -142,13 +142,15 @@
           class="fill-screen"
           style="background-image: url(images/beachyoga.jpg)"
         >
-          <div class="home-container01" style="position: unset;">
+          <div class="home-container01" style="position: unset">
             <div class="home-container02">
-              <h1 class="home-text01" style="color: black;font-weight: bold">ON THE COASTLINE</h1>
+              <h1 class="home-text01" style="color: black; font-weight: bold">
+                ON THE COASTLINE
+              </h1>
               <span class="home-text01">
                 <span></span>
                 <span>
-                  <p style="color: black;font-weight: bold;font-size: 1em;">
+                  <p style="color: black; font-weight: bold; font-size: 1em">
                     We're waiting for the weather to warm up so that we can go
                     to the coastline. We really miss the summertime, our outdoor
                     yoga seesions on the coastline.
@@ -161,22 +163,22 @@
       </section>
 
       <section id="classestimetable" class="row">
-
-            <div
-            class="fill-screen"
-              style="background-image: url(/images/login.png); padding-left: 20px; padding-right: 20px;"
-            >
-            <br>
-            <h1 style="text-align: center; color: white;">Class TimeTable</h1>
-            <br>
-            <div id="vouchers" style="color: white;"></div>
-            <table id="table" class="table">
-  
-            </table>
-  
-            </div>
-
-
+        <div
+          class="fill-screen"
+          id="admin"
+          style="
+            background-image: url(/images/login.png);
+            padding-left: 20px;
+            padding-right: 20px;
+          "
+        >
+          <br />
+          <h1 style="text-align: center; color: white">Class TimeTable</h1>
+          <br />
+          <div id="vouchers" style="color: white"></div>
+          <table id="table" class="table"></table>
+          <div id="Add_class" style="margin-top: 50px"></div>
+        </div>
       </section>
 
       <section id="contact-us" class="row contact-us">
