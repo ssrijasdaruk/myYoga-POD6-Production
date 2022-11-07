@@ -664,6 +664,11 @@
   color: var(--dl-color-gray-white);
   text-align: center;
 }
+.home-text-message {
+  color: var(--dl-color-secondary-100);
+  max-width: 600px;
+  text-align: center;
+}
 .home-text01 {
   color: var(--dl-color-gray-900);
   max-width: 600px;
@@ -779,6 +784,13 @@
   color: var(--dl-color-secondary-100);
   margin-top: var(--dl-space-space-unit);
   text-align: center;
+  font-family: Open Sans;
+}
+.home-text1 {
+  color: var(--dl-color-secondary-100);
+  font-size: 0.875em;
+  font-style: normal;
+  font-weight: 700;
   font-family: Open Sans;
 }
 .home-text11 {
