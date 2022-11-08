@@ -2,32 +2,43 @@
 <html>
   <head>
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-
     <script src="scripts/db.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/admin.js"></script>
-    <!-- color: white;-->
+
     <!--<style>
       #table {
+        color: white;
         text-align: left;
       }
     </style>-->
-
   </head>
   <body onload="setupElement(); renderTable();">
     <header id="top">
-      <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
+      <nav
+        class="navbar navbar-inverse navbar-fixed-top cbp-af-header"
+        role="navigation"
+      >
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+            >
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -39,28 +50,37 @@
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#top">Home</a></li>
-              <li><a href="#poses">Poses</a></li>
-              <li><a href="#instructors">Instructors</a></li> 
-              <li><a href="#classestimetable">Classe Timetable</a></li>                                        
-              <li><a href="#contact-us">Contact Us</a></li>              
+              <li><a href="#instructors">Instructors</a></li>
+              <li><a href="#activities">Activities</a></li>
+              <li>
+                <a href="#classestimetable">Classe Table</a>
+              </li>
+              <li><a href="#contact-us">Contact Us</a></li>
               <li id="login"><a href="login.html">Login</a></li>
               <li id="logout" onclick="deleteAllCookies()">
                 <a href="index.html">Logout</a>
               </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
       </nav>
-
     </header>
 
     <div class="container-fluid">
       <section class="row title-row">
-        <div class="fill-screen stellar-bg" style="background-image: url(images/header_bg.jpg)" data-stellar-background-ratio="0.2">
-          <!--<img class="img-responsive title-image" src="/images/site-logo-white.png" alt="myYoga Logo" />-->
+        <div
+          class="fill-screen"
+          style="background-image: url(images/header_bg.jpg)"
+        >
+          <!--<img class="img-responsive title-image" src="/images/site-logo-white.png" alt="Rocky Mountain Outdoors Logo" />-->
           <div class="home-container01">
             <div class="home-container02">
               <h1 class="home-text">Your well-being starts with us.</h1>
@@ -74,24 +94,23 @@
               </span>
             </div>
           </div>
-          <!-- This portion is for Username, password, and login butn -->
 
           <div class="down-button">
-            <a class="btn" href="#poses">
+            <a class="btn" href="#instructors">
               <i class="fa fa-arrow-circle-down fa-4x"></i>
             </a>
           </div>
         </div>
       </section>
 
-      <section id="poses" class="row activity-section">
+      <section id="instructors" class="row activity-section">
         <div class="activity-element col-md-4">
           <img src="images/pose2.jpg" />
           <h2>Emmy, Wong</h2>
           <p>            
             Yoga Training & Study 1979 - 1989   
             Various types/styles of yoga training to 
-            include: hatha, kripalu, Singapore.
+            include: hatha and kripalu.
           </p>
         </div>
         <div class="activity-element col-md-4">
@@ -109,22 +128,26 @@
           <p>
             As an experienced Yoga Instructor since 1979 my goal 
             has been to help bring together body, mind and spirit. 
-            I incorporate a variety of traditional practices in 
-            movement, breath, and meditation.
+            A variety of traditional practices in movement, breath, 
+            and meditation.
           </p>
         </div>
       </section>
 
-      <section id="instructors" class="row">
-        <div class="fill-screen" style="background-image: url(images/beachyoga.jpg)">
-          <div class="home-container01" style="position: unset;">
+      <section id="activities" class="row">
+        <div
+          class="fill-screen"
+          style="background-image: url(images/beachyoga.jpg)"
+        >
+          <div class="home-container01" style="position: unset">
             <div class="home-container02">
-              <h1 class="home-text01" style="color: black;font-weight: bold">ON THE COASTLINE</h1>
+              <h1 class="home-text01" style="color: black; font-weight: bold">
+                ON THE COASTLINE
+              </h1>
               <span class="home-text01">
                 <span></span>
                 <span>
-                  <!-- <p style="color: black;font-weight: bold;font-size: 1em;"> -->
-                  <p>
+                  <p style="color: black; font-weight: bold; font-size: 1em">
                     We're waiting for the weather to warm up so that we can go
                     to the coastline. We really miss the summertime, our outdoor
                     yoga seesions on the coastline.
@@ -137,13 +160,10 @@
       </section>
 
       <section id="classestimetable" class="row text-banner">
-        <!--<div class="fill-screen" style="background-image: url(/images/login.png); padding-left: 20px; padding-right: 20px;">-->
         <div class="fill-screen" id="admin">
-          <br>
-          <!--<h1 style="text-align: center; color: white;">Class TimeTable</h1>-->
+          <br />
           <h1 style="text-align: center;">Class TimeTable</h1>
-          <br>
-          <!--<div id="vouchers" style="color: white;"></div>-->
+          <br />
           <div id="vouchers"></div>
           <table id="table" class="table"></table>
           <div id="Add_class" style="margin-top: 50px"></div>
@@ -217,8 +237,19 @@
     <script src="scripts/classie.js"></script>
     <script src="scripts/cbpAnimatedHeader.js"></script>
     <script src="scripts/jquery.easing.1.3.js"></script>
-    <script src="scripts/jquery.stellar.js"></script>
     <script src="scripts/scrolling.js"></script>
-    
+
+    <!--<script>
+      $(function () {
+        $(window).on("load resize", function () {
+          $(".fill-screen").css("height", window.innerHeight);
+        });
+
+        // add Bootstrap's scrollspy
+        $("body").scrollspy({
+          target: ".navbar",
+        });
+      });
+    </script>-->
   </body>
 </html>
