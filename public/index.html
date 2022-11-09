@@ -1,13 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <title></title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link
-      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
       type="text/css"
     />
@@ -15,15 +12,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="scripts/db.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/admin.js"></script>
+    <link href="css/style.css" rel="stylesheet" />    
 
     <style>
-      #table {
-        color: white;
-        text-align: left;
+      #table {        
+        text-align: center;
       }
     </style>
   </head>
@@ -59,10 +52,10 @@
           >
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#top">Home</a></li>
-              <li><a href="#poses">Poses</a></li>
-              <li><a href="#activities">Instructors</a></li>
+              <li><a href="#instructors">Instructors</a></li>
+              <li><a href="#activities">Activities</a></li>
               <li>
-                <a href="#classestimetable">Classe Table</a>
+                <a href="#classestimetable">Class Timetable</a>
               </li>
               <li><a href="#contact-us">Contact Us</a></li>
               <li id="login"><a href="login.html">Login</a></li>
@@ -79,11 +72,11 @@
 
     <div class="container-fluid">
       <section class="row title-row">
-        <div
-          class="fill-screen"
-          style="background-image: url(images/header_bg.jpg)"
-        >
+        <div class="fill-screen stellar-bg" 
+        style="background-image: url(images/header_bg.jpg)"
+        data-stellar-background-ratio=""0.2">
           <!--<img class="img-responsive title-image" src="/images/site-logo-white.png" alt="Rocky Mountain Outdoors Logo" />-->
+         
           <div class="home-container01">
             <div class="home-container02">
               <h1 class="home-text">Your well-being starts with us.</h1>
@@ -99,36 +92,41 @@
           </div>
 
           <div class="down-button">
-            <a class="btn" href="#poses">
+            <a class="btn" href="#instructors">
               <i class="fa fa-arrow-circle-down fa-4x"></i>
             </a>
           </div>
         </div>
       </section>
 
-      <section id="poses" class="row activity-section">
-        <div class="activity-element col-md-4">
+      <section id="instructors" class="row contact-us">
+        <h1>MEET INSTRUCTORS</h1>
+        <div class="activity-element article col-md-4">          
           <img src="images/pose2.jpg" />
-          <h2>POSE 1</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <h2>Emmy, Wong</h2>
+          <p>            
+            Yoga Training & Study 1979 - 1989   
+            Various types/styles of yoga training to 
+            include: hatha and kripalu.
           </p>
         </div>
         <div class="activity-element col-md-4">
           <img src="images/pose3.jpg" />
-          <h2>POSE 2</h2>
+          <h2>Susan, Zhuo</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor.
+            the first female Western yoga teacher to fully 
+            integrate yoga asana and Tibetan Buddhism in her 
+            practice and teaching.              
           </p>
         </div>
         <div class="activity-element col-md-4">
           <img src="images/yoga-3.jpg  " />
-          <h2>POSE 3</h2>
+          <h2>Kate, Lin</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor.
+            As an experienced Yoga Instructor since 1979 my goal 
+            has been to help bring together body, mind and spirit. 
+            A variety of traditional practices in movement, breath, 
+            and meditation.
           </p>
         </div>
       </section>
@@ -140,13 +138,13 @@
         >
           <div class="home-container01" style="position: unset">
             <div class="home-container02">
-              <h1 class="home-text01" style="color: black; font-weight: bold">
+              <h1 class="home-text01" style="color: rgb(48, 48, 48); font-weight: bold">
                 ON THE COASTLINE
               </h1>
               <span class="home-text01">
                 <span></span>
                 <span>
-                  <p style="color: black; font-weight: bold; font-size: 1em">
+                  <p style="color: rgb(48, 48, 48); font-weight: bold; font-size: 1em">
                     We're waiting for the weather to warm up so that we can go
                     to the coastline. We really miss the summertime, our outdoor
                     yoga seesions on the coastline.
@@ -158,22 +156,12 @@
         </div>
       </section>
 
-      <section id="classestimetable" class="row">
-        <div
-          class="fill-screen"
-          id="admin"
-          style="
-            background-image: url(/images/login.png);
-            padding-left: 20px;
-            padding-right: 20px;
-          "
-        >
-          <br />
-          <h1 style="text-align: center; color: white">Class TimeTable</h1>
-          <br />
-          <div id="vouchers" style="color: white"></div>
+      <section id="classestimetable" class="row title-row">
+        <div class="fill-screen" id="admin">          
+          <h1 style="text-align: center;">CLASS TIMETABLE</h1>          
+          <div id="vouchers"></div>
           <table id="table" class="table"></table>
-          <div id="Add_class" style="margin-top: 50px"></div>
+          <div id="Add_class" class=""></div>
         </div>
       </section>
 
@@ -183,25 +171,25 @@
           <div class="label-container">
             <h6 class="label-text"><span>MESSAGE US</span></h6>
           </div>
-          <h2 class="home-text1">Type in the bellow form</h2>
+          <!--<h2 class="home-text1">Type in the bellow form</h2>-->
           <div class="home-form">
-            <h1 class="home-text01">Want to join us?</h1>
-            <span class="home-text01 textXL">
-              Complete this form and we will get back to you in 24 hours.
+            <h1 class="home-text1">Want to join us?</h1>
+            <span class="home-text-message textMessage">
+              <h6>Complete this form and we will get back to you in 24 hours.</h6>
             </span>
-            <span class="home-text53 textXS">FULL NAME</span>
+            <span class="home-text-message textMessage"><h6>Full Name</h6></span>
             <input
               type="text"
               placeholder="Full Name"
               class="home-textinput textSM input"
             />
-            <span class="home-text54 textXS">EMAIL</span>
+            <span class="home-text-message textMessage"><h6>Email</h6></span>
             <input
               type="text"
               placeholder="Email"
               class="home-textinput1 textSM input"
             />
-            <span class="home-text55 textXS">MESSAGE</span>
+            <span class="home-text-message textMessage"><h6>Message</h6></span>
             <!--disabled="true"-->
             <textarea
               cols="80"
@@ -221,11 +209,22 @@
           </div>
         </div>
       </section>
+
     </div>
 
     <footer class="container-fluid">
       <div class="row">
-        <h1>FOOTER</h1>
+        <!--<h1>FOOTER</h1>-->
+        <div class="col-xs-12 col-sm-12">
+          <div>
+            <!--<span><a href="/sg-en/about/privacy-policy"">Privacy Statement</a></span>
+            <span><a href="/sg-en/support/terms-of-use">Terms &amp; Conditions</a></span>
+            <span><a href="/sg-en/support/company-cookies-similar-technology">Cookie Policy</a></span>
+            <span><a href="/sg-en/support/accessibility-statement">Accessibility Statement</a></span>
+            <span><a href="/sg-en/about/site-map">Sitemap</a></span>-->
+            <span>© 2022 Accenture. All Rights Reserved.</span>
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -234,18 +233,11 @@
     <script src="scripts/classie.js"></script>
     <script src="scripts/cbpAnimatedHeader.js"></script>
     <script src="scripts/jquery.easing.1.3.js"></script>
-    <!--<script src="scripts/scrolling.js"></script>-->
-    <script>
-      $(function () {
-        $(window).on("load resize", function () {
-          $(".fill-screen").css("height", window.innerHeight);
-        });
-
-        // add Bootstrap's scrollspy
-        $("body").scrollspy({
-          target: ".navbar",
-        });
-      });
-    </script>
+    <script src="scripts/jquery.stellar.js"></script>
+    <script src="scripts/scrolling.js"></script>
+    <script src="scripts/db.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/admin.js"></script>
+    
   </body>
 </html>
