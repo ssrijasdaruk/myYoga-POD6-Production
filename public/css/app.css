@@ -24,7 +24,7 @@
     }
 }
 .navbar-inverse .navbar-nav>li>a {
-    color: #bbb;
+    color: rgb(183, 32, 173);
 }
 
 
@@ -100,7 +100,8 @@
 }
 
 footer {
-    background-color: #777;
+    /*background-color: #777;*/
+    background-color:  rgb(183, 32, 173);
     color: #ddd;
     padding: 20px;
     text-align: center;
